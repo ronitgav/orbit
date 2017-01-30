@@ -1,0 +1,209 @@
+#box {
+    background: red;
+    height: 200px;
+    width: 200px;
+    margin: 48px auto;
+    padding: 50px;
+    box-sizing: border-box;
+    -webkit-border-radius: 100px;
+}
+
+/* Colors */
+
+body#colors {
+    background: rgba(25, 52, 84, 1);
+    color: white;
+}
+
+#colors #container {
+    width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+#colors #box {
+    
+    background: radial-gradient(blue, green, red, orange);
+}
+
+/* Shadows */
+
+#shadows #container {
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fc3;
+    box-shadow: 0 20px 10px -15px #333;
+}
+
+
+#shadows h1 {
+    color: white;
+    text-shadow: 1px 2px 5px blue, 2px 2px 10px red;
+}
+
+/*Columns */
+#three-columns {
+    column-count: 3;
+    column-gap: 30px;
+    column-rule-style: solid;
+    column-rule-width: 2px;
+    column-rule-color: #3c71c7;
+}
+
+/*Animations & Transitions */
+@keyframes box {
+    from {border-radius: 100%; background-color: red; top: 0; left 0;}
+    to   {border-radius: 40%; background-color: blue; top: 100px; left: 100px;}
+}
+
+#animations #box {
+    position: relative;
+    animation-name: box;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+#box2 {
+    background: blue;
+    width: 200px;
+    height: 200px;
+    color: white;
+}
+
+#box2:hover {
+    background: red;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transition: height 4s, width 6s, background 8s;
+}
+
+
+/* Orbit Animation */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#universe {
+    background: black;
+    background: radial-gradient(#555, #000);
+}
+
+#ear {
+    border-radius: 200%;
+    height: 8%;
+    width: 8%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -45px;
+    box-shadow: 0 0 15px #4682B4;
+    animation: spin 3s linear infinite; 
+    animation: darken 4s linear infinite;  
+    animation: lighten 4s linear infinite;
+}
+
+#stars {
+    height: 100%;
+    width: 100%;
+    background: url('images/stars.jpg'); 
+    position: relative;
+    z-index: 2;
+    animation: starPulse 4s infinite alternate;
+   
+}
+
+#sun {
+    height: 150px;
+    width: 150px;
+    background: orange;
+    background: radial-gradient(#f5c313, #ec7e08);
+    border-radius: 100%;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -100px;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 50px #f5c91a;
+}
+
+#earth-orbit {
+   
+    height: 610px;
+    width: 550px;
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    border-radius: 100%;
+    animation: spin 30s linear infinite; 
+}
+
+#moon-orbit {
+
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 0;
+    border-radius: 100%;
+    margin-top:-60px;
+    margin-left: -60px;
+    animation: spin-rev 4s linear infinite;
+    
+    
+}
+
+#moon {
+    height: 20px;
+    width: 20px;
+    background: radial-gradient(#708090, black);
+    border-radius: 100%;
+    box-shadow: 0 0 10px #708090;
+}
+
+@keyframes starPulse {
+    from {opacity: 1;}
+    to {opacity: 0.2;}
+}
+
+@keyframes sunFire {
+    from {box-shadow: 0 0 50px #f5c91a;}
+    to {box-shadow: 0 0 0 #000;}
+}
+
+@keyframes spin {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes spin-rev {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0);}
+}
+
+@keyframes darken {
+    from {opacity: 1;}
+    to {opacity: 0.3;}
+}
+
+@keyframes lighten {
+    from {opacity: 0.3;}
+    to {opacity: 1;}
+}
+
+
+
+
